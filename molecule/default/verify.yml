@@ -27,12 +27,12 @@
         fail_msg: "scaffold_example.conf does not contain expected message"
 
     - name: Check that tree is installed
-      ansible.builtin.command: which tree
-      changed_when: false
+      ansible.builtin.stat:
+        path: /usr/bin/tree
       register: tree_check
 
     - name: Assert tree command is available
       ansible.builtin.assert:
         that:
-          - tree_check.rc == 0
+          - tree_check.stat.exists
         fail_msg: "tree is not installed"
