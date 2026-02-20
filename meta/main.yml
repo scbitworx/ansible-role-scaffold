@@ -12,8 +12,8 @@ galaxy_info:
     - name: ArchLinux
       versions: [all]
     - name: Ubuntu
-      versions: ["24.04"]
+      versions: [all]
     - name: Debian
-      versions: ["12"]
+      versions: [all]
 
 dependencies: []
