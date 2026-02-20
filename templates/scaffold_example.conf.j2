@@ -2,4 +2,4 @@
 # Role: scaffold
 
 message = {{ scaffold_message }}
-hostname = {{ ansible_hostname }}
+hostname = {{ ansible_facts['hostname'] }}
