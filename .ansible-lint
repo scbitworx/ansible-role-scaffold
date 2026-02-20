@@ -6,8 +6,6 @@ strict: true
 extra_vars:
   scaffold_message: "Hello from the scaffold role"
 
-role_name_check: true
-
 mock_roles: []
 
 exclude_paths:
