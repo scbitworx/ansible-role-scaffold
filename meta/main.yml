@@ -1,6 +1,7 @@
 ---
 galaxy_info:
   role_name: scaffold
+  namespace: scbitworx
   author: bwright
   description: >-
     Scaffold role used as a template for all future roles. Installs tree,
