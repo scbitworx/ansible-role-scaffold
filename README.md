@@ -25,6 +25,26 @@ Molecule testing, and GitHub Actions CI.
 
 ## Testing
 
+### Prerequisites
+
+- Python 3 + pip
+- Docker (running)
+- Install the toolchain:
+
+```bash
+pip install ansible-core ansible-lint yamllint molecule molecule-plugins[docker]
+ansible-galaxy collection install community.general
+```
+
+### Lint (fast — run before every commit)
+
+```bash
+yamllint .
+ansible-lint
+```
+
+### Molecule (full integration test)
+
 ```bash
 # Run full test suite (lint + converge + verify + destroy)
 molecule test
@@ -32,6 +52,7 @@ molecule test
 # Converge and keep containers running for debugging
 molecule converge
 molecule login -h archlinux
+molecule verify
 molecule destroy
 ```
 
