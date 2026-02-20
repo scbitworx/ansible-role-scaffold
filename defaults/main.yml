@@ -1,0 +1,5 @@
+---
+# Public variables for the scaffold role.
+# Override these in group_vars or host_vars as needed.
+
+scaffold_message: "Hello from the scaffold role"

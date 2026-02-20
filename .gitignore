@@ -1,0 +1,9 @@
+*.retry
+.molecule/
+__pycache__/
+*.pyc
+.cache/
+*.tar.gz
+.tox/
+.venv/
+venv/

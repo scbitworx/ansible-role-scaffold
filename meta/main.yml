@@ -1,0 +1,19 @@
+---
+galaxy_info:
+  role_name: scaffold
+  author: bwright
+  description: >-
+    Scaffold role used as a template for all future roles. Installs tree,
+    deploys a trivial template, and notifies a handler to validate the full
+    toolchain end-to-end.
+  license: MIT
+  min_ansible_version: "2.15"
+  platforms:
+    - name: Archlinux
+      versions: [all]
+    - name: Ubuntu
+      versions: ["24.04"]
+    - name: Debian
+      versions: ["12"]
+
+dependencies: []

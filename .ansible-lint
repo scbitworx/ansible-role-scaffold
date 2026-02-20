@@ -1,0 +1,26 @@
+---
+profile: production
+
+strict: true
+
+extra_vars:
+  scaffold_message: "Hello from the scaffold role"
+
+role_name_check: true
+
+mock_roles: []
+
+exclude_paths:
+  - .github/
+  - tests/
+
+enable_list:
+  - fqcn
+  - no-changed-when
+  - no-handler
+  - yaml
+
+warn_list:
+  - role-name[match]
+
+skip_list: []

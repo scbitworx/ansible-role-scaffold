@@ -1,0 +1,38 @@
+---
+- name: Verify
+  hosts: all
+  become: true
+  tasks:
+    - name: Check that scaffold config file exists
+      ansible.builtin.stat:
+        path: /etc/scaffold_example.conf
+      register: scaffold_conf
+
+    - name: Assert scaffold config file exists
+      ansible.builtin.assert:
+        that:
+          - scaffold_conf.stat.exists
+          - scaffold_conf.stat.isreg
+        fail_msg: "/etc/scaffold_example.conf does not exist"
+
+    - name: Read scaffold config file content
+      ansible.builtin.slurp:
+        src: /etc/scaffold_example.conf
+      register: scaffold_conf_content
+
+    - name: Assert scaffold config contains expected message
+      ansible.builtin.assert:
+        that:
+          - "'Hello from the scaffold role' in scaffold_conf_content.content | b64decode"
+        fail_msg: "scaffold_example.conf does not contain expected message"
+
+    - name: Check that tree is installed
+      ansible.builtin.command: which tree
+      changed_when: false
+      register: tree_check
+
+    - name: Assert tree command is available
+      ansible.builtin.assert:
+        that:
+          - tree_check.rc == 0
+        fail_msg: "tree is not installed"

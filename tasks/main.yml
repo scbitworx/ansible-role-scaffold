@@ -1,0 +1,23 @@
+---
+- name: Load distro-specific variables
+  ansible.builtin.include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}.yml"
+    - "{{ ansible_os_family }}.yml"
+    - main.yml
+
+- name: Install scaffold package
+  ansible.builtin.package:
+    name: "{{ __scaffold_package }}"
+    state: present
+  become: true
+
+- name: Deploy scaffold example config
+  ansible.builtin.template:
+    src: scaffold_example.conf.j2
+    dest: /etc/scaffold_example.conf
+    owner: root
+    group: root
+    mode: "0644"
+  become: true
+  notify: scaffold | verify

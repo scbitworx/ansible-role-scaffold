@@ -1,0 +1,4 @@
+---
+- name: scaffold | verify
+  ansible.builtin.debug:
+    msg: "Scaffold handler triggered — template deployed successfully"
