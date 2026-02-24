@@ -23,6 +23,20 @@ Molecule testing, and GitHub Actions CI.
 |---|---|---|
 | `scaffold_message` | `"Hello from the scaffold role"` | Message written to the config file |
 
+## Using This as a Template
+
+To create a new role from this scaffold:
+
+1. Copy the repo and rename to `ansible-role-<your_role_name>`
+2. Update `meta/main.yml`: set `role_name` to your role name
+3. Rename all variables: `scaffold_` → `<your_role_name>_` (public),
+   `__scaffold_` → `__<your_role_name>_` (private in `vars/`)
+4. Rename handlers: `Scaffold |` → `<Your_role_name |>`
+5. Update `.ansible-lint` `extra_vars` to mock your role's variables
+6. Replace the trivial package/template tasks with real work
+7. Update `molecule/default/converge.yml` and `verify.yml` for your role
+8. Update this README
+
 ## Testing
 
 ### Prerequisites
