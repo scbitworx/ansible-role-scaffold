@@ -1,6 +1,0 @@
----
-- name: Test scaffold role
-  hosts: localhost
-  become: true
-  roles:
-    - scaffold
