@@ -19,8 +19,8 @@ Molecule testing, and GitHub Actions CI.
 
 ## Role Variables
 
-| Variable | Default | Description |
-|---|---|---|
+| Variable           | Default                          | Description                        |
+| ------------------ | -------------------------------- | ---------------------------------- |
 | `scaffold_message` | `"Hello from the scaffold role"` | Message written to the config file |
 
 ## Using This as a Template
